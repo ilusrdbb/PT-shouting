@@ -1,8 +1,12 @@
 import requests
 
 #初始化所有response_1
-response_1,response_2,response_3,response_4,response_5,response_6,response_7,response_8= None,None,None,None,None,None,None,None
+response_1,response_2,response_3,response_4,response_5,response_6,response_7,response_8,=None,None,None,None,None,None,None,None
+status_code=None
+
+
 # 第一个目标URL和请求设置
+
 url_base = "https://cyanbug.net/shoutbox.php"
 
 # 请求参数
@@ -220,47 +224,78 @@ url = f"https://iyuu.cn/{iyuu_key}.send"
 
 #初始化iyuu返回值
 r1, r2, r3, r4, r5, r6, r7, r8 = "", "", "", "", "", "", "", ""
-if response_1 is not None and response_1.text.strip():  # strip() 去除前后空白字符
-    r1 = "大青虫上传求成功\n"
+# 检查每个响应状态
+if response_1 is not None:
+    if response_1.status_code < 300:
+        r1 = "大青虫上传求成功\n"
+    else:
+        r1 = "大青虫求上传失败，HTTP响应: " + str(response_1.status_code) + "\n"
 else:
-    r1 = "大青虫求上传失败"
-if response_2 is not None and response_2.text.strip():
-    r2 = "大青虫魔力求成功\n"
+    r1 = "大青虫求上传失败，无响应\n"
+
+if response_2 is not None:
+    if response_2.status_code < 300:
+        r2 = "大青虫魔力求成功\n"
+    else:
+        r2 = "大青虫求魔力失败，HTTP响应: " + str(response_2.status_code) + "\n"
 else:
-    r2 = "大青虫求魔力失败"
-if response_3 is not None and response_3.text.strip():
-    r3 = "tosky求上传成功\n"
+    r2 = "大青虫求魔力失败，无响应\n"
+
+if response_3 is not None:
+    if response_3.status_code < 300:
+        r3 = "tosky求上传成功\n"
+    else:
+        r3 = "tosky求上传失败，HTTP响应: " + str(response_3.status_code) + "\n"
 else:
-    r3 = "tosky求上传失败\n"
+    r3 = "tosky求上传失败，无响应\n"
 
-if response_4 is not None and response_4.text.strip():
-    r4 = "tosky求魔力成功\n"
+if response_4 is not None:
+    if response_4.status_code < 300:
+        r4 = "tosky求魔力成功\n"
+    else:
+        r4 = "tosky求魔力失败，HTTP响应: " + str(response_4.status_code) + "\n"
 else:
-    r3 = "tosky求魔力失败\n"
+    r4 = "tosky求魔力失败，无响应\n"
 
-if response_5 is not None and response_5.text.strip():
-    r5 = "大青虫求彩虹ID成功\n"
+if response_5 is not None:
+    if response_5.status_code < 300:
+        r5 = "大青虫求彩虹ID成功\n"
+    else:
+        r5 = "大青虫求彩虹ID失败，HTTP响应: " + str(response_5.status_code) + "\n"
 else:
-    r5 = "大青虫求彩虹ID失败\n"
-if response_6 is not None and response_6.text.strip():
-    r6 = "大青虫求VIP成功\n"
+    r5 = "大青虫求彩虹ID失败，无响应\n"
+
+if response_6 is not None:
+    if response_6.status_code < 300:
+        r6 = "大青虫求VIP成功\n"
+    else:
+        r6 = "大青虫求VIP失败，HTTP响应: " + str(response_6.status_code) + "\n"
 else:
-    r6 = "大青虫求VIP失败\n"
-if response_7 is not None and response_7.text.strip():
-    r7 = "青蛙求上传成功\n"
+    r6 = "大青虫求VIP失败，无响应\n"
+
+if response_7 is not None:
+    if response_7.status_code < 300:
+        r7 = "青蛙求上传成功\n"
+    else:
+        r7 = "青蛙求上传失败，HTTP响应: " + str(response_7.status_code) + "\n"
 else:
-    r7 = "青蛙求上传失败\n"
+    r7 = "青蛙求上传失败，无响应\n"
 
-
-if response_8 is not None and response_8.text.strip():
-
-     r8 = "青蛙求下载成功\n"
-
-
+if response_8 is not None:
+    if response_8.status_code < 300:
+        r8 = "青蛙求下载成功\n"
+    else:
+        r8 = "青蛙求下载失败，HTTP响应: " + str(response_8.status_code) + "\n"
 else:
-    r8 = "青蛙求下载失败\n"
+    r8 = "青蛙求下载失败，无响应\n"
 
 
+
+
+
+
+
+# 打印各个请求的HTTP响应状态码
 # 定义text和desp变量
 text = "自动发送get请求"
 desp = r1+r2+r3+r4+r5+r6+r7
@@ -275,6 +310,7 @@ params = {
 response = requests.get(url, params=params)
 
 # 打印响应
+print(desp)
 print("Response Status Code:", response.status_code)
 print("Response Text:", response.text)
 
