@@ -1,0 +1,28 @@
+{
+    "iyuu_key": "",
+	"大青虫喊": "开",
+	"青蛙喊": "开",
+	"tosky喊": "开",
+	"大青虫固定几号喊VIP":"2",
+    "cyanbug": {
+        "c_secure_uid": "",
+        "c_secure_pass": "",
+        "c_secure_ssl": "",
+        "c_secure_tracker_ssl": "",
+        "c_secure_login": ""
+    },
+    "tosky": {
+        "c_secure_uid": "your_uid",
+        "c_secure_pass": "your_pass",
+        "c_secure_ssl": "your_ssl",
+        "c_secure_tracker_ssl": "your_tracker_ssl",
+        "c_secure_login": "your_login"
+    },
+    "qingwapt": {
+        "c_secure_uid": "your_uid",
+        "c_secure_pass": "your_pass",
+        "c_secure_ssl": "your_ssl",
+        "c_secure_tracker_ssl": "your_tracker_ssl",
+        "c_secure_login": "your_login"
+    }
+}

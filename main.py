@@ -1,13 +1,71 @@
 import requests
+import json
+import os
+import datetime
 
-#初始化所有response_1
+
+from datetime import date
+
+# 获取当前日期
+today = datetime.date.today()
+print(today)
+
+
+
+
+
+
+
+
+
+#初始化所有response
 response_1,response_2,response_3,response_4,response_5,response_6,response_7,response_8,=None,None,None,None,None,None,None,None
 status_code=None
+file_path="config.json"
+if os.path.exists(file_path):
+    print(f"{file_path} 文件存在")
+else:
+    print(f"{file_path} 文件不存在")
+    params = {
+        'text': "自动发get请求失败",
+        'desp': "cookie文件不存在"
+    }
+#    response = requests.get(iyuuurl, params=params)
+
+
+
+
+with open('config.json', 'r', encoding='utf-8') as f:
+    cookies_data = json.load(f)
+
+
+cookies_cyanbug = cookies_data['cyanbug']
+cookies_tosky = cookies_data['tosky']
+cookies_qingwapt = cookies_data['qingwapt']
+iyuu_key = cookies_data.get("iyuu_key", "")
+iyuuurl = f"https://iyuu.cn/{iyuu_key}.send"
+
+tosky喊 = cookies_data.get("tosky喊","")
+青蛙喊=cookies_data.get("青蛙喊","")
+大青虫喊=cookies_data.get("大青虫喊","")
+大青虫固定几号喊VIP=cookies_data.get("大青虫固定几号喊VIP","")
+int(大青虫固定几号喊VIP)
+print(tosky喊,青蛙喊,大青虫喊)
+print(大青虫固定几号喊VIP)
+
+
+if today.day==大青虫固定几号喊VIP:
+    print("今天是设定的日期")
+else:
+    print("今天不是设定的日期")
+
 
 
 # 第一个目标URL和请求设置
 
+
 url_base = "https://cyanbug.net/shoutbox.php"
+
 
 # 请求参数
 params_1 = {
@@ -55,44 +113,43 @@ headers = {
     'Priority': 'u=0, i'
 }
 
-# 大青虫Cookies
-cookies = {
-    'c_secure_uid': '',
-    'c_secure_pass': '',
-    'c_secure_ssl': '',
-    'c_secure_tracker_ssl': '',
-    'c_secure_login': ''
-}
 
 # 发送第一个GET请求
-try:
-    response_1 = requests.get(url_base, headers=headers, cookies=cookies, params=params_1)
-    print("Response 1:")
-    print(response_1.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error during request 1: {e}")
+if 大青虫喊== "开":
+    try:
+        response_1 = requests.get(url_base, headers=headers, cookies=cookies_cyanbug, params=params_1)
+        print("Response 1:")
+        print(response_1.text)
+    except requests.exceptions.RequestException as e:
+        print(f"Error during request 1: {e}")
 
-# 发送第二个GET请求
-try:
-    response_2 = requests.get(url_base, headers=headers, cookies=cookies, params=params_2)
-    print("Response 2:")
-    print(response_2.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error during request 2: {e}")
+    # 发送第二个GET请求
+    try:
+        response_2 = requests.get(url_base, headers=headers, cookies=cookies_cyanbug, params=params_2)
+        print("Response 2:")
+        print(response_2.text)
+    except requests.exceptions.RequestException as e:
+        print(f"Error during request 2: {e}")
+    if today.day == 大青虫固定几号喊VIP:
+        try:
+            response_5 = requests.get(url_base, headers=headers, cookies=cookies_cyanbug, params=params_5)
+            print("Response 5:")
+            print(response_5.text)
+        except requests.exceptions.RequestException as e:
+            print(f"Error during request 2: {e}")
 
-try:
-    response_5 = requests.get(url_base, headers=headers, cookies=cookies, params=params_5)
-    print("Response 5:")
-    print(response_5.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error during request 2: {e}")
+        try:
+            response_6 = requests.get(url_base, headers=headers, cookies=cookies_cyanbug, params=params_6)
+            print("Response 6:")
+            print(response_6.text)
+        except requests.exceptions.RequestException as e:
+            print(f"Error during request 2: {e}")
 
-try:
-    response_6 = requests.get(url_base, headers=headers, cookies=cookies, params=params_6)
-    print("Response 6:")
-    print(response_6.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error during request 2: {e}")
+
+
+
+
+
 
 # tosky 喊
 url = "https://t.tosky.club/shoutbox.php"
@@ -129,29 +186,25 @@ headers = {
     'Priority': 'u=0, i'
 }
 
-#tosky Cookies
-cookies = {
-    'c_secure_uid': '',
-    'c_secure_pass': '',
-    'c_secure_ssl': '',
-    'c_secure_tracker_ssl': '',
-    'c_secure_login': ''
-}
 
-# 发送第三个GET请求
-try:
-    response_3 = requests.get(url, headers=headers, cookies=cookies, params=params3)
-    print("Response 3:")
-    print(response_3.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error during request 3: {e}")
+#tosky
 
-try:
-    response_4 = requests.get(url, headers=headers, cookies=cookies, params=params4)
-    print("Response 3:")
-    print(response_4.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error during request 3: {e}")
+if tosky喊== "开" :
+    try:
+        response_3 = requests.get(url, headers=headers, cookies=cookies_tosky, params=params3)
+        print("Response 3:")
+        print(response_3.text)
+    except requests.exceptions.RequestException as e:
+        print(f"Error during request 3: {e}")
+
+    try:
+        response_4 = requests.get(url, headers=headers, cookies=cookies_tosky, params=params4)
+        print("Response 3:")
+        print(response_4.text)
+    except requests.exceptions.RequestException as e:
+        print(f"Error during request 3: {e}")
+
+
 
 #青蛙喊
 url= "https://www.qingwapt.com/shoutbox.php"
@@ -185,40 +238,29 @@ headers = {
     'Priority': 'u=0, i'
 }
 
-#青蛙cookie
-cookies = {
-    'c_secure_uid': '',
-    'c_secure_pass': '',
-    'c_secure_ssl': '',
-    'c_secure_tracker_ssl': '',
-    'c_secure_login': ''
-}
+#青蛙
 
-try:
-    response_7 = requests.get(url, headers=headers, cookies=cookies, params=params7)
-    print("Response 7:")
-    print(response_7.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error during request 3: {e}")
+if 青蛙喊== "开" :
+    try:
+        response_7 = requests.get(url, headers=headers, cookies=cookies_qingwapt, params=params7)
+        print("Response 7:")
+        print(response_7.text)
+    except requests.exceptions.RequestException as e:
+        print(f"Error during request 3: {e}")
 
-
-#以下为青蛙喊下载，需要请自己删除注释符号
-# try:
-#     response_8 = requests.get(url, headers=headers, cookies=cookies, params=params8)
-#     print("Response 8:")
-#     print(response_8.text)
-# except requests.exceptions.RequestException as e:
-#     print(f"Error during request 3: {e}")
+    # 以下为青蛙喊下载，需要请自己删除注释符号
+    # try:
+    #     response_8 = requests.get(url, headers=headers, cookies=cookies_qingwapt, params=params8)
+    #     print("Response 8:")
+    #     print(response_8.text)
+    # except requests.exceptions.RequestException as e:
+    #     print(f"Error during request 3: {e}")
 
 
 
-##iyuu自动通知
 
-import requests
 
-# 定义IYUU令牌和API URL
-iyuu_key = ""
-url = f"https://iyuu.cn/{iyuu_key}.send"
+
 
 
 
@@ -307,11 +349,12 @@ params = {
 }
 
 # 发送GET请求
-response = requests.get(url, params=params)
+response = requests.get(iyuuurl, params=params)
 
 # 打印响应
 print(desp)
 print("Response Status Code:", response.status_code)
 print("Response Text:", response.text)
+
 
 
