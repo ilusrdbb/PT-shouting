@@ -1,0 +1,40 @@
+# 登录cookie 有值的站点会定时喊话
+cookie:
+  qingwa: ''
+  tosky: ''
+  cyanbug: ''
+# 是否定时执行
+scheduler_enabled: false
+# 定时执行时间设置
+scheduler_time:
+  hour: 9
+  minute: 0
+
+# 下面的设置请谨慎更改
+# 喊话内容 填空则该项目不进行喊话
+shouting_content:
+  qingwa:
+    upload: '蛙总，求上传'
+#    download: '蛙总，求下载'
+    download: ''
+  tosky:
+    upload: '来点上传'
+    point: '来点魔力'
+  cyanbug:
+    upload: '青虫娘，求上传'
+    point: '青虫娘，求魔力'
+    # 每月几号固定求vip 填0则不喊vip 请确保系统时间正确
+    month_day: 0
+    colorful: '青虫娘，求彩虹id'
+    vip: '青虫娘，求vip'
+# 代理地址 仅支持http代理 例'http://127.0.0.1:1081'
+proxy_url: ''
+# 请求超时时间 单位秒
+time_out: 15
+# 每次请求睡眠时间 比如设置2则每次请求前睡随机0~2秒 设置0不生效
+sleep_time: 1
+# 请求地址
+shouting_url:
+  qingwa: 'https://www.qingwapt.com/shoutbox.php'
+  tosky: 'https://t.tosky.club/shoutbox.php'
+  cyanbug: 'https://cyanbug.net/shoutbox.php'
