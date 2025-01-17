@@ -1,7 +1,7 @@
 # PT-shouting
 
 pt站自动喊话脚本  
-感谢原作者https://github.com/huoyart/PT-shouting，由于两边代码风格差异过大干脆自己fork出了一份维护   
+感谢原作者[https://github.com/huoyart/PT-shouting](https://github.com/huoyart/PT-shouting)，由于两边代码风格差异过大干脆自己fork出了一份维护   
 目前支持青蛙、大青虫、tosky，但是由于本人只有青蛙有号，其余站点如果出问题无法解决见谅  
 频繁喊话会被ban号，请合理使用本工具，如果因为不规范使用导致账号问题概不负责  
 本项目基于pycharm开发，开发环境为python 3.9  
