@@ -22,7 +22,7 @@ def run():
 
 
 if __name__ == '__main__':
-    print("Version 0.1.0")
+    print("Version 0.2.0")
     if config.read("scheduler_enabled"):
         # 添加定时任务
         scheduler.add_job(
