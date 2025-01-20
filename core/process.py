@@ -50,7 +50,7 @@ class Process(object):
             else:
                 log.info(res)
         # 青蛙喊下载
-        download_content = config.read("shouting_content")[self.site]["upload"]
+        download_content = config.read("shouting_content")[self.site]["download"]
         if download_content:
             self.params["shbox_text"] = download_content
             res = await request.get(url, self.params, self.header, self.session)
