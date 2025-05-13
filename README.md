@@ -1,5 +1,7 @@
 # PT-shouting
 
+**此项目不再维护，mp插件中有更好的实现**
+
 pt站自动喊话脚本  
 感谢原作者[https://github.com/huoyart/PT-shouting](https://github.com/huoyart/PT-shouting)，由于两边代码风格差异过大干脆自己fork出了一份维护   
 目前支持青蛙、大青虫、tosky，但是由于本人只有青蛙有号，其余站点如果出问题无法解决见谅  
